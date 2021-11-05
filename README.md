@@ -56,6 +56,8 @@ SubImageFile (clip input, string file, int "id", int[] "palette", bool "gray", b
 
 ### Building:
 
+- ffmpeg is required.
+
 - Windows\
     Use solution files.
 
