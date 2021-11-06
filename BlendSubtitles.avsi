@@ -23,6 +23,8 @@
 
 ### Changelog ###
 #---------------
+# The chroma resampler changed to bicubic for the conversion of the subtitles to YUV.
+#---------------
 # Initial version.
 
 
@@ -37,7 +39,7 @@ Function BlendSubImage(clip c, string file, bool "info", string "matrix", string
 
     subs = SubImageFile(c, file, info=(info_) ? true : false)
     alpha = PropToClip(subs)
-    Layer(BlankClip(alpha), z_ConvertFormat(subs, pixel_type="y8", colorspace_op="rgb:"+transfer+":"+primaries+"=>"+matrix+":"+transfer+":"+primaries))
+    Layer(BlankClip(alpha), z_ConvertFormat(subs, pixel_type="y8", colorspace_op="rgb:"+transfer+":"+primaries+"=>"+matrix+":"+transfer+":"+primaries, resample_filter="bicubic"))
     mt_merge(BlankClip(last), last, alpha)    
     premultiplied = z_ConvertFormat(last, Width(c), Height(c), pixel_type=PixelType(c), resample_filter="bicubic")
     alpha = ConvertBits(alpha, BitsPerComponent(c))
