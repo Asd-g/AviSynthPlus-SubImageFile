@@ -10,7 +10,7 @@ This is a port of the VapourSynth sub.ImageFile.
 
 ### Requirements:
 
-- AviSynth+ 3.6 or later
+- AviSynth+ 3.7.x r3446 or later
 
 - Microsoft VisualC++ Redistributable Package 2022 (can be downloaded from [here](https://github.com/abbodi1406/vcredist/releases))
 
